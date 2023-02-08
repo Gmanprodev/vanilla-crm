@@ -39,4 +39,7 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/contacts/{id}/edit', [ContactController::class, 'postEdit'])
         ->name('contacts.post.edit');
+
+    Route::post('/contacts/{id}/delete', [ContactController::class, 'postDelete'])
+        ->name('contacts.post.delete');
 });

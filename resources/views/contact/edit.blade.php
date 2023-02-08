@@ -13,7 +13,7 @@
                     <p>Edit Contact</p>
                 </h1>
         
-                <form action="/contacts/create" method="POST" class="p-8 mt-6 mb-0 space-y-4 rounded-lg shadow-2xl">
+                <form action="/contacts/{{ $contact->id }}/edit" method="POST" class="p-8 mt-6 mb-0 space-y-4 rounded-lg shadow-2xl">
                     @csrf
                     <p class="text-lg font-medium text-center">Edit {{ $contact->name }}</p>
         

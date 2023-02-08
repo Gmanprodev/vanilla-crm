@@ -62,4 +62,17 @@ class ContactController extends Controller
         return redirect('contacts')
             ->with('status', 'Contact updated!');
     }
+
+    public function postDelete($id)
+    {
+        $contact = Contact::find($id)
+            ->delete();
+
+        if (!$contact) {
+            abort(500);
+        }
+
+        return redirect('contacts')
+            ->with('status', 'Contact deleted!');
+    }
 }

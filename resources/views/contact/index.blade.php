@@ -12,7 +12,7 @@
                 <h1 class="text-2xl font-bold text-center text-indigo-600 sm:text-3xl">
                     <p>Contacts</p>
                 </h1>
-                <form class="p-8 mt-6 mb-0 space-y-4 rounded-lg shadow-2xl">
+                <div class="p-8 mt-6 mb-0 space-y-4 rounded-lg shadow-2xl">
                     <table class="table-auto w-full">
                         <thead class="text-left tracking-wider">
                             <tr>
@@ -32,14 +32,17 @@
                                         <td class="p-4">{{ $contact->address }}</td>
                                         <td class="p-4">{{ $contact->telephone }}</td>
                                         <td class="p-4">
-                                            <button class="block w-full justify-center items-center px-1 py-1 text-sm font-medium text-white bg-indigo-600 rounded-lg">
-                                                <a href="/contacts/{{ $contact->id }}/edit">Edit</a>
-                                            </button>
+                                            <a href="/contacts/{{ $contact->id }}/edit" class="w-full justify-center items-center px-3 py-1 text-sm font-medium text-white bg-indigo-600 rounded-lg">
+                                                Edit
+                                            </a>
                                         </td>
                                         <td class="p-4">
-                                            <button class="block w-full justify-center items-center px-1 py-1 text-sm font-medium text-white bg-red-600 rounded-lg">
-                                                <a href="/contacts/{{ $contact->id }}/edit">Delete</a>
-                                            </button>
+                                            <form method="POST" action="/contacts/{{ $contact->id }}/delete">
+                                                @csrf
+                                                <button type="submit" class="w-full justify-center items-center px-1 py-1 text-sm font-medium text-white bg-red-600 rounded-lg">
+                                                    Delete
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -51,8 +54,8 @@
                             @endforelse
 
                     </table>
-                </form>
-                <div class="flex flex-col items-center justify-center mt-5">
+                </div>
+                <div class="flex flex-col items-center justify-center mt-10">
                     <button class="block w-1/2 mb-5 px-5 py-3 text-sm font-medium text-white bg-indigo-600 rounded-lg">
                         <a href="/contacts/create">Add New Contact</a>
                     </button>
