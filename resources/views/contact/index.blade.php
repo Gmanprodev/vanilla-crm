@@ -56,17 +56,14 @@
                     </table>
                 </div>
                 <div class="flex flex-col items-center justify-center mt-10">
-                    <button class="block w-1/2 mb-5 px-5 py-3 text-sm font-medium text-white bg-indigo-600 rounded-lg">
-                        <a href="/contacts/create">Add New Contact</a>
-                    </button>
-                    <button class="block w-1/2 px-5 py-3 text-sm font-medium text-white bg-indigo-600 rounded-lg">
-                        <a href="/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            Logout
-                        </a>
-                        <form id="logout-form" action="/logout" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </button>
+                    <a href="/contacts/create" class="text-center w-1/2 mb-5 px-5 py-3 text-sm font-medium text-white bg-indigo-600 rounded-lg">Add New Contact</a>
+                    
+                    <a href="/logout" class="text-center w-1/2 px-5 py-3 text-sm font-medium text-white bg-indigo-600 rounded-lg" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+                    <form id="logout-form" action="/logout" method="POST" style="display: none;">
+                        @csrf
+                    </form>    
                 </div>
             </div>
         </div>

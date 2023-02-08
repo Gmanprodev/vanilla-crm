@@ -76,9 +76,10 @@
                     <button type="submit" class="block w-full px-5 py-3 text-sm font-medium text-white bg-indigo-600 rounded-lg">
                         Update Contact
                     </button>
-                    <button class="block w-full px-5 py-3 text-sm font-medium text-white bg-indigo-600 rounded-lg">
-                        <a href="/contacts">Back to Contacts</a>
-                    </button>
+                    
+                    <a href="/contacts" class="block w-full text-center px-5 py-3 text-sm font-medium text-white bg-indigo-600 rounded-lg">
+                        Back to Contacts
+                    </a>  
                 </form>
             </div>
         </div>
