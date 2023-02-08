@@ -7,30 +7,80 @@
         <title>Edit {{ $contact->name }} - CRM</title>
     </head>
     <body>
+        <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
+            <div class="max-w-lg mx-auto">
+                <h1 class="text-2xl font-bold text-center text-indigo-600 sm:text-3xl">
+                    <p>Edit Contact</p>
+                </h1>
+        
+                <form action="/contacts/create" method="POST" class="p-8 mt-6 mb-0 space-y-4 rounded-lg shadow-2xl">
+                    @csrf
+                    <p class="text-lg font-medium text-center">Edit {{ $contact->name }}</p>
+        
+                    <div>
+                        <label class="text-sm font-medium">Name</label><br>
+                        
+                        <div class="relative mt-1">
+                            <input
+                            type="text"
+                            name="name"
+                            value="{{ $contact->name }}"
+                            required
+                            class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
+                            />
+                        </div>
+                    </div>
+        
+                    <div>
+                        <label class="text-sm font-medium">Email</label>
+            
+                        <div class="relative mt-1">
+                            <input
+                            type="email"
+                            name="email"
+                            value="{{ $contact->email }}"
+                            required
+                            class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
+                            />
+                        </div>
+                    </div>
 
-        <h1>Edit {{ $contact->name }}</h1>
+                    <div>
+                        <label class="text-sm font-medium">Address</label>
+            
+                        <div class="relative mt-1">
+                            <input
+                            type="text"
+                            name="address"
+                            value="{{ $contact->address }}"
+                            required
+                            class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
+                            />
+                        </div>
+                    </div>
 
-        <p>
-            <a href="/contacts">Back to Contacts</a>
-        </p>
-
-        <form action="/contacts/create" method="POST">
-            @csrf
-
-            <label>Name</label><br>
-            <input type="text" name="name" value="{{ $contact->name }}" required><br><br>
-
-            <label>Email</label><br>
-            <input type="email" name="email" value="{{ $contact->email }}" required><br><br>
-
-            <label>Address</label><br>
-            <input type="text" name="address" value="{{ $contact->address }}" required><br><br>
-
-            <label>Telephone</label><br>
-            <input type="tel" name="telephone" value="{{ $contact->telephone }}"><br><br>
-
-            <button type="submit">Update Contact</button>
-        </form>
-
+                    <div>
+                        <label class="text-sm font-medium">Telephone</label>
+            
+                        <div class="relative mt-1">
+                            <input
+                            type="tel"
+                            name="telephone"
+                            value="{{ $contact->telephone }}"
+                            required
+                            class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
+                            />
+                        </div>
+                    </div>
+    
+                    <button type="submit" class="block w-full px-5 py-3 text-sm font-medium text-white bg-indigo-600 rounded-lg">
+                        Update Contact
+                    </button>
+                    <button class="block w-full px-5 py-3 text-sm font-medium text-white bg-indigo-600 rounded-lg">
+                        <a href="/contacts">Back to Contacts</a>
+                    </button>
+                </form>
+            </div>
+        </div>
     </body>
 </html>
